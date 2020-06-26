@@ -1,0 +1,25 @@
+Mi_obra_maestra
+Comedia_negra
+8
+Gaston_Duprat
+Luis_Brandoni Lucas_Aranda Raúl_Arévalo Mahmoud_Azim Daniela_Katz Guillermo_Francella Andrea_Frigerio
+I,_como_Icaro
+Suspenso
+10
+Henri_Verneuil
+Yves_Montand Michel_Albertini Roland_Amstutz Jean-Pierre_Bagot
+Jack_and_Jill
+Comedia
+3
+Dennis_Dugan
+Adam_Sandler Al_Pacino Katie_Holmes
+Carmen_y_Lola
+Drama
+7
+Arantxa_Echevarria
+Zaira_Romero Rosy_Rodriguez Rafaela_Leon Carolina_Yuste
+Cementerio_de_animales
+Terror
+7
+Kevin_Kolsch
+Jason_Clarke Amy_Seimetz John_Lithgow 

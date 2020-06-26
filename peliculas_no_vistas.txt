@@ -1,0 +1,25 @@
+Kidnap
+Suspenso
+6
+Luis_Prieto
+Halle_Berry Sage_Correa Lew_Temple Chris_McGinn
+Miss_Simpatia
+Comedia
+9
+Donald_Petrie
+Sandra_Bullock Michael_Caine Benjamin_Bratt William_Shatner Ernie_Hudson Candice_Bergen
+Pasajeros
+Aventura
+2
+Morten_Tyldum
+Jennifer_Lawrence Chris_Pratt Michael_Sheen Laurence_Fishburne
+La_forma_del_agua
+Cine_fantastico
+5
+Guillermo_del_Toro
+Sally_Hawkins Michael_Shannon Richard_Jenkins Octavia_Spencer Doug_Jonas
+Yo_antes_de_ti
+Romance
+8
+Thea_Sharrock
+Emilia_Clarke Sam_Caflin Jenna_Coleman Charles_Dance Janet_McTeer Matthew_Lewis
