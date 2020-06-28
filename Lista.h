@@ -92,4 +92,9 @@ Dato Lista<Dato>::get_dato(unsigned pos)
     return paux->get_dato();
 }
 
+template < typename Dato >
+unsigned Lista<Dato>::get_tam()
+{
+    return tam;
+}
 #endif
