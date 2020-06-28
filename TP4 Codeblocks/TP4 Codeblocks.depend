@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1593366696 source:/home/usuario/Escritorio/Echuken/Fiuba/Algo2/TPS/TP4/TrabajoPractico/TP4 Codeblocks/main.cpp
+	<iostream>
+	"Lista.h"
+
+1593366671 /home/usuario/Escritorio/Echuken/Fiuba/Algo2/TPS/TP4/TrabajoPractico/TP4 Codeblocks/Lista.h
+	<iostream>
+	"Nodo.h"
+
+1593367084 /home/usuario/Escritorio/Echuken/Fiuba/Algo2/TPS/TP4/TrabajoPractico/TP4 Codeblocks/Nodo.h
+
