@@ -1,0 +1,3 @@
+/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/TrabajoPractico.dir

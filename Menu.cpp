@@ -1,7 +1,6 @@
 #include "Menu.h"
-#include "Lista.h"
 
-Menu::Menu(Lista <Peliculas> *l_vistas, Lista <Peliculas> *l_no_vistas, Lista <Peliculas> *l_recomendadas)
+Menu::Menu(Lista<Peliculas> *l_vistas, Lista<Peliculas> *l_no_vistas, Lista<Peliculas> *l_recomendadas)
 {
     vistas = l_vistas;
     no_vistas = l_no_vistas;
@@ -24,23 +23,26 @@ void Menu::mostrar_menu()
         cout<<"La opcion ingresada no es valida, vuelva a ingresar una opcion entre 1 y 7: ";
         cin>>opcion;
     }
-    Menu::mostrar_lista(opcion);
+        mostrar_lista(opcion);
     }
     while (opcion != 4);
 }
 
-void Menu::mostrar_lista(int opcion)
-{
-    Lista <Peliculas> lista_aux;
-    switch(opcion)
-    {
-        case 1: lista_aux = vistas; break;
-        case 2: lista_aux = no_vistas; break;
-        case 3: lista_aux = recomendadas; break;
-        case 4: break;
+void Menu::mostrar_lista(int opcion) {
+    Lista<Peliculas> *lista_aux;
+    switch (opcion) {
+        case 1:
+            lista_aux = vistas;
+            break;
+        case 2:
+            lista_aux = no_vistas;
+            break;
+        case 3:
+            lista_aux = recomendadas;
+            break;
+        case 4:
+            break;
     }
-    for (int pos = 1; pos <= lista_aux -> get_tam(); pos++)
-        lista_aux -> get_dato(i).mostrar()
-}
-
-
+    for (int pos = 1; pos <= lista_aux->get_tam(); pos++)
+        lista_aux->get_dato(pos).mostrar();
+};

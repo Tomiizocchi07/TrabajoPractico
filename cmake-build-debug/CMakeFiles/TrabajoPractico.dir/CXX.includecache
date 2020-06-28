@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tomas/Escritorio/TP/TrabajoPractico/Lista.h
+iostream
+-
+Nodo.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Nodo.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/Menu.cpp
+Menu.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Menu.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/Menu.h
+Lista.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Lista.h
+Peliculas.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/Nodo.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
+
