@@ -3,10 +3,9 @@
 
 #include <string>
 
-#include "lista.h"
-#include "nodo.h"
+#include "Lista.h"
 
-using namespace std
+using namespace std;
 
 class Peliculas{
 
@@ -21,9 +20,8 @@ private:
 public:
 
 	//Constructor de la clase.
-    //PRE: Se le deben proporcionar los datos o se inicializaran por defecto.
     //POST: Construye la clase con los datos proporcionados.
-	Peliculas();
+	Peliculas(string nombre, string genero, int puntaje, string director, Lista<string>* actores);
 
     //POST: Devuelve el nombre de la pelicula.
 	string get_nombre();
@@ -44,7 +42,7 @@ public:
 	//Destructor de la clase.
     //POST: Destruye la clase, liberando la memoria dinamica utilizada.
 	~Peliculas();
-}
+};
 
 
 #endif
