@@ -1,68 +1,31 @@
-#include "archivo.hpp"
+#ifndef archivo_h
+#define archivo_h
+
 #include <stdio.h>
-#include <iostream>
 #include <fstream>
 #include <string>
-#include "lista.h"
+#include "pelicula.hpp"
 
 using namespace std;
 
-Archivo::Archivo(string nombreArchivoVistas, string nombreArchivoNoVistas)
+class Archivo
 {
-    ifstream archivoVistas(nombreArchivoVistas);
-    ifstream archivoNoVistas(nombreArchivoNoVistas);
-}
+private:
 
-bool Archivo::existeArchivo(ifstream& archivo)
-{
-    if (!archivo.fail())
-    {
-        return true;
-    }
-    else
-        return false;
-}
+public:
+    //Constructor
+    //PRE: -.
+    //POST: Objeto archivo creado
+    Archivo(){};
+    //Destructor
+    //PRE: Objeto archivo creado
+    //Libera recursos, memoria, etc.
+    ~Archivo(){};
+    bool existeArchivo(ifstream& archivo);
+    bool leerArchivos(string nombreArchivoVistas, string nombreArchivoNoVistas, Lista<Pelicula>* pListaVistas, Lista<Pelicula>* pListaNoVistas);
+    void cargarLista(ifstream& archivo, Lista<Pelicula>* pLista);
+    void cargarListaRecomendadas(Lista<Pelicula>* pListaVistas, Lista<Pelicula>* pListaNoVistas, Lista<Pelicula>* pListaRecomendadas);
+    void cargarActores(ifstream& archivo, Pelicula pelicula);
+};
 
-void cargarListaActores(string listaActores[], ifstream& archivo)
-{
-    string actor;
-    int i = 0;
-    while (archivo >> actor)
-    {
-        listaActores[i] = actor;
-        i++;
-    }
-}
-
-void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
-{
-    string nombrePelicula;
-    string generoPelicula;
-    int puntajePelicula;
-    string directorPelicula;
-    string listaActores[10];
-    while(archivo >> nombrePelicula)
-    {
-        archivo >> generoPelicula;
-        archivo >> puntajePelicula;
-        archivo >> directorPelicula;
-        cargarListaActores(listaActores, archivo);
-        //creo objeto Pelicula
-        //cargo Lista con pLista
-    }
-}
-
-void Archivo::leerArchivos()
-{
-    if (existeArchivo(archivoNoVistas))
-    {
-        if (existeArchivo(archivoVistas))
-        {
-            
-        }
-    }
-    else
-    {
-        cout << "[-] El archivo 'no_vistas.txt' no se pudo abrir correctamente, por favor intente de nuevo." << endl;
-    }
-}
+#endif /* archivo_hpp */
