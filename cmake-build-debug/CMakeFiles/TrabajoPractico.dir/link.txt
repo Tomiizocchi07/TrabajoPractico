@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/TrabajoPractico.dir/Menu.cpp.o CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o CMakeFiles/TrabajoPractico.dir/archivo.cpp.o  -o TrabajoPractico 
+/usr/bin/c++  -g   CMakeFiles/TrabajoPractico.dir/Menu.cpp.o CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o CMakeFiles/TrabajoPractico.dir/archivo.cpp.o CMakeFiles/TrabajoPractico.dir/main.cpp.o  -o TrabajoPractico 

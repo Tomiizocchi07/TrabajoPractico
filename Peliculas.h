@@ -19,6 +19,8 @@ public:
     //POST: Construye la clase con los datos proporcionados.
 	Peliculas(string nombre, string genero, int puntaje, string director, Lista<string> *actores);
 
+	Peliculas(){};
+
     //POST: Devuelve el nombre de la pelicula.
 	string get_nombre();
 

@@ -9,4 +9,5 @@ add_executable(TrabajoPractico
         Menu.cpp
         Peliculas.cpp
         archivo.cpp
+        main.cpp
         )

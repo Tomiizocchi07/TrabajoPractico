@@ -12,10 +12,6 @@ iostream
 Nodo.h
 /home/tomas/Escritorio/TP/TrabajoPractico/Nodo.h
 
-/home/tomas/Escritorio/TP/TrabajoPractico/Menu.cpp
-Menu.h
-/home/tomas/Escritorio/TP/TrabajoPractico/Menu.h
-
 /home/tomas/Escritorio/TP/TrabajoPractico/Menu.h
 Lista.h
 /home/tomas/Escritorio/TP/TrabajoPractico/Lista.h
@@ -24,28 +20,12 @@ Peliculas.h
 
 /home/tomas/Escritorio/TP/TrabajoPractico/Nodo.h
 
-/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.cpp
-Peliculas.h
-/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
-
 /home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
 string
 -
 Lista.h
 /home/tomas/Escritorio/TP/TrabajoPractico/Lista.h
 
-/home/tomas/Escritorio/TP/TrabajoPractico/archivo.cpp
-archivo.h
-/home/tomas/Escritorio/TP/TrabajoPractico/archivo.h
-stdio.h
--
-iostream
--
-fstream
--
-string
--
-
 /home/tomas/Escritorio/TP/TrabajoPractico/archivo.h
 stdio.h
 -
@@ -55,4 +35,16 @@ string
 -
 Peliculas.h
 /home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/main.cpp
+iostream
+-
+fstream
+-
+Menu.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Menu.h
+Peliculas.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
+archivo.h
+/home/tomas/Escritorio/TP/TrabajoPractico/archivo.h
 

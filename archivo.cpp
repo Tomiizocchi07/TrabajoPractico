@@ -21,19 +21,18 @@ void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
     string nombrePelicula, generoPelicula, directorPelicula;
     int puntajePelicula;
     string actorPelicula;
-    //Lista<string>* pAux = 0;
+    Lista<string>* pAux;
     while(archivo >> nombrePelicula)
     {
-        Lista<string> actores;
-        //pAux = &actores;
+        pAux = new Lista<string>;
         archivo >> generoPelicula;
         archivo >> puntajePelicula;
         archivo >> directorPelicula;
         while ((archivo >> actorPelicula) && (archivo.get() != '\n'))
         {
-            actores.insert(actorPelicula);
+            (*pAux).insert(actorPelicula);
         }
-        Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, &actores);
+        Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, pAux);
         (*pLista).insert(pelicula);
     }
 }

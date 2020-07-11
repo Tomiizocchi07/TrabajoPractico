@@ -102,6 +102,9 @@
 		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/archivo.h">
 			<Option target="TrabajoPractico"/>
 		</Unit>
+		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/main.cpp">
+			<Option target="TrabajoPractico"/>
+		</Unit>
 		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

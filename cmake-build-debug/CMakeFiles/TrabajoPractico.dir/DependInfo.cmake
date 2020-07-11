@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tomas/Escritorio/TP/TrabajoPractico/Menu.cpp" "/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/TrabajoPractico.dir/Menu.cpp.o"
   "/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.cpp" "/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o"
   "/home/tomas/Escritorio/TP/TrabajoPractico/archivo.cpp" "/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/TrabajoPractico.dir/archivo.cpp.o"
+  "/home/tomas/Escritorio/TP/TrabajoPractico/main.cpp" "/home/tomas/Escritorio/TP/TrabajoPractico/cmake-build-debug/CMakeFiles/TrabajoPractico.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
