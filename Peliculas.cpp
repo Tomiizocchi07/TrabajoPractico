@@ -33,7 +33,7 @@ void Peliculas::mostrar_pelicula() {
     cout<<genero << endl;
     cout<<puntaje << endl;
     cout<<director << endl;
-    for (int i = 1; i <= (* actores).get_tam(); i++)
+    for (unsigned int i = 1; i <= (* actores).get_tam(); i++)
         cout << actores -> get_dato(i);
 }
 

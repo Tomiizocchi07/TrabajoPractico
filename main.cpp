@@ -16,5 +16,5 @@ int main()
     archivos.leerArchivos("peliculas_vistas.txt", "peliculas_no_vistas.txt", l_vistas, l_no_vistas);
     Menu menu(l_vistas,l_no_vistas,l_recomendadas);
     menu.mostrar_menu();
-    return (0);
+    return 0;
 }

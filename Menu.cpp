@@ -43,6 +43,6 @@ void Menu::mostrar_lista(int opcion) {
         case 4:
             break;
     }
-    for (int pos = 1; pos <= lista_aux->get_tam(); pos++)
+    for (unsigned int pos = 1; pos <= lista_aux->get_tam(); pos++)
         lista_aux->get_dato(pos).mostrar_pelicula();
-};
+}
