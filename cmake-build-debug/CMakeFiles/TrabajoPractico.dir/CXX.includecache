@@ -24,5 +24,35 @@ Peliculas.h
 
 /home/tomas/Escritorio/TP/TrabajoPractico/Nodo.h
 
+/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.cpp
+Peliculas.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
+string
+-
+Lista.h
+/home/tomas/Escritorio/TP/TrabajoPractico/Lista.h
+
+/home/tomas/Escritorio/TP/TrabajoPractico/archivo.cpp
+archivo.h
+/home/tomas/Escritorio/TP/TrabajoPractico/archivo.h
+stdio.h
+-
+iostream
+-
+fstream
+-
+string
+-
+
+/home/tomas/Escritorio/TP/TrabajoPractico/archivo.h
+stdio.h
+-
+fstream
+-
+string
+-
+Peliculas.h
 /home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h
 

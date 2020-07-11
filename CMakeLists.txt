@@ -7,4 +7,6 @@ include_directories(.)
 
 add_executable(TrabajoPractico
         Menu.cpp
-        main.cpp)
+        Peliculas.cpp
+        archivo.cpp
+        )

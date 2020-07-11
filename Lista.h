@@ -93,7 +93,6 @@ template < typename Dato >
 void Lista<Dato>::insert(Dato d)
 {
     Nodo<Dato>* pnodo = new Nodo<Dato>(d);
-
     Nodo<Dato>* paux = primero;
     if (this->lista_vacia()){
         primero = pnodo;

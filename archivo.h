@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <fstream>
 #include <string>
-#include "pelicula.hpp"
+#include "Peliculas.h"
 
 using namespace std;
 
@@ -22,10 +22,10 @@ public:
     //Libera recursos, memoria, etc.
     ~Archivo(){};
     bool existeArchivo(ifstream& archivo);
-    bool leerArchivos(string nombreArchivoVistas, string nombreArchivoNoVistas, Lista<Pelicula>* pListaVistas, Lista<Pelicula>* pListaNoVistas);
-    void cargarLista(ifstream& archivo, Lista<Pelicula>* pLista);
-    void cargarListaRecomendadas(Lista<Pelicula>* pListaVistas, Lista<Pelicula>* pListaNoVistas, Lista<Pelicula>* pListaRecomendadas);
-    void cargarActores(ifstream& archivo, Pelicula pelicula);
+    bool leerArchivos(string nombreArchivoVistas, string nombreArchivoNoVistas, Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas);
+    void cargarLista(ifstream& archivo, Lista<Peliculas>* pLista);
+    void cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas);
+    void cargarActores(ifstream& archivo, Peliculas pelicula);
 };
 
 #endif /* archivo_hpp */

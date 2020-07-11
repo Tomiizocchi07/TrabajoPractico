@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TrabajoPractico.dir/Menu.cpp.o"
-  "CMakeFiles/TrabajoPractico.dir/main.cpp.o"
+  "CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o"
+  "CMakeFiles/TrabajoPractico.dir/archivo.cpp.o"
   "TrabajoPractico"
   "TrabajoPractico.pdb"
 )

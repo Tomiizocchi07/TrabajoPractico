@@ -1,4 +1,4 @@
-#include "archivo.hpp"
+#include "archivo.h"
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -16,17 +16,16 @@ bool Archivo::existeArchivo(ifstream& archivo)
         return false;
 }
 
-
-void Archivo::cargarLista(ifstream& archivo, Lista<Pelicula>* pLista)
+void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
 {
     string nombrePelicula, generoPelicula, directorPelicula;
     int puntajePelicula;
     string actorPelicula;
-    Lista<string>* pAux = 0;
+    //Lista<string>* pAux = 0;
     while(archivo >> nombrePelicula)
     {
         Lista<string> actores;
-        pAux = &actores;
+        //pAux = &actores;
         archivo >> generoPelicula;
         archivo >> puntajePelicula;
         archivo >> directorPelicula;
@@ -34,16 +33,12 @@ void Archivo::cargarLista(ifstream& archivo, Lista<Pelicula>* pLista)
         {
             actores.insert(actorPelicula);
         }
-        Pelicula pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula);
-        pelicula.setActores(pAux);
+        Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, &actores);
         (*pLista).insert(pelicula);
-        
     }
-    
-
 }
 
-bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVistas, Lista<Pelicula>* pListaVistas, Lista<Pelicula>* pListaNoVistas)
+bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVistas, Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas)
 {
     ifstream archivoNoVistas(nombreArchivoNoVistas);
     ifstream archivoVistas(nombreArchivoVistas);
@@ -64,11 +59,11 @@ bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVist
     }
 }
 
-void Archivo::cargarListaRecomendadas(Lista<Pelicula>* pListaVistas, Lista<Pelicula>* pListaNoVistas, Lista<Pelicula>* pListaRecomendadas)
+void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas)
 {
     for (int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
     {
-        if ((*pListaNoVistas).get_dato(i).getPuntaje() >= 7)
+        if ((*pListaNoVistas).get_dato(i).get_puntaje() >= 7)
         {
             (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
         }
@@ -76,7 +71,7 @@ void Archivo::cargarListaRecomendadas(Lista<Pelicula>* pListaVistas, Lista<Pelic
         {
             for (int j = 1; j <= (*pListaVistas).get_tam(); j++)
             {
-                if ((*pListaNoVistas).get_dato(i).getDirector() == (*pListaVistas).get_dato(j).getDirector())
+                if ((*pListaNoVistas).get_dato(i).get_director() == (*pListaVistas).get_dato(j).get_director())
                 {
                     (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
                 }

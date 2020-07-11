@@ -16,11 +16,11 @@ void Menu::mostrar_menu()
     cout<<"2. Mostrar peliculas NO vistas."<<endl;
     cout<<"3. Mostrar peliculas recomendadas."<<endl;
     cout<<"4. Salir."<<endl;
-    cout << "\n\nElija la opcion que desea realizar: ";
+    cout<< "\n\nElija la opcion que desea realizar: ";
     cin >> opcion;
     while ((0 >= opcion) || (opcion > 4))
     {
-        cout<<"La opcion ingresada no es valida, vuelva a ingresar una opcion entre 1 y 7: ";
+        cout<<"La opcion ingresada no es valida, vuelva a ingresar una opcion entre 1 y 4: ";
         cin>>opcion;
     }
         mostrar_lista(opcion);
@@ -44,5 +44,5 @@ void Menu::mostrar_lista(int opcion) {
             break;
     }
     for (int pos = 1; pos <= lista_aux->get_tam(); pos++)
-        lista_aux->get_dato(pos).mostrar();
+        lista_aux->get_dato(pos).mostrar_pelicula();
 };

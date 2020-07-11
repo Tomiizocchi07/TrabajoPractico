@@ -2,7 +2,6 @@
 #define PELICULAS_H
 
 #include <string>
-
 #include "Lista.h"
 
 using namespace std;
@@ -10,18 +9,15 @@ using namespace std;
 class Peliculas{
 
 private:
-
 	string nombre;
 	string genero;
 	int puntaje;
 	string director;
 	Lista<string>* actores;
-
 public:
-
 	//Constructor de la clase.
     //POST: Construye la clase con los datos proporcionados.
-	Peliculas(string nombre, string genero, int puntaje, string director, Lista<string>* actores);
+	Peliculas(string nombre, string genero, int puntaje, string director, Lista<string> *actores);
 
     //POST: Devuelve el nombre de la pelicula.
 	string get_nombre();
@@ -42,7 +38,9 @@ public:
 	//Destructor de la clase.
     //POST: Destruye la clase, liberando la memoria dinamica utilizada.
 	~Peliculas();
-};
 
+	//POST: Devuelve los datos de la pelicula.
+	void mostrar_pelicula();
+};
 
 #endif

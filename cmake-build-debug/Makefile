@@ -150,32 +150,59 @@ Menu.cpp.s:
 	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
-main.o: main.cpp.o
+Peliculas.o: Peliculas.cpp.o
 
-.PHONY : main.o
+.PHONY : Peliculas.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/main.cpp.o
-.PHONY : main.cpp.o
+Peliculas.cpp.o:
+	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o
+.PHONY : Peliculas.cpp.o
 
-main.i: main.cpp.i
+Peliculas.i: Peliculas.cpp.i
 
-.PHONY : main.i
+.PHONY : Peliculas.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/main.cpp.i
-.PHONY : main.cpp.i
+Peliculas.cpp.i:
+	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.i
+.PHONY : Peliculas.cpp.i
 
-main.s: main.cpp.s
+Peliculas.s: Peliculas.cpp.s
 
-.PHONY : main.s
+.PHONY : Peliculas.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/main.cpp.s
-.PHONY : main.cpp.s
+Peliculas.cpp.s:
+	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.s
+.PHONY : Peliculas.cpp.s
+
+archivo.o: archivo.cpp.o
+
+.PHONY : archivo.o
+
+# target to build an object file
+archivo.cpp.o:
+	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/archivo.cpp.o
+.PHONY : archivo.cpp.o
+
+archivo.i: archivo.cpp.i
+
+.PHONY : archivo.i
+
+# target to preprocess a source file
+archivo.cpp.i:
+	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/archivo.cpp.i
+.PHONY : archivo.cpp.i
+
+archivo.s: archivo.cpp.s
+
+.PHONY : archivo.s
+
+# target to generate assembly for a file
+archivo.cpp.s:
+	$(MAKE) -f CMakeFiles/TrabajoPractico.dir/build.make CMakeFiles/TrabajoPractico.dir/archivo.cpp.s
+.PHONY : archivo.cpp.s
 
 # Help Target
 help:
@@ -189,9 +216,12 @@ help:
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Peliculas.o"
+	@echo "... Peliculas.i"
+	@echo "... Peliculas.s"
+	@echo "... archivo.o"
+	@echo "... archivo.i"
+	@echo "... archivo.s"
 .PHONY : help
 
 

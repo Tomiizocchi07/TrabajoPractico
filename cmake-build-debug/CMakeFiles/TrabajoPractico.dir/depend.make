@@ -7,9 +7,14 @@ CMakeFiles/TrabajoPractico.dir/Menu.cpp.o: ../Menu.h
 CMakeFiles/TrabajoPractico.dir/Menu.cpp.o: ../Nodo.h
 CMakeFiles/TrabajoPractico.dir/Menu.cpp.o: ../Peliculas.h
 
-CMakeFiles/TrabajoPractico.dir/main.cpp.o: ../Lista.h
-CMakeFiles/TrabajoPractico.dir/main.cpp.o: ../Menu.h
-CMakeFiles/TrabajoPractico.dir/main.cpp.o: ../Nodo.h
-CMakeFiles/TrabajoPractico.dir/main.cpp.o: ../Peliculas.h
-CMakeFiles/TrabajoPractico.dir/main.cpp.o: ../main.cpp
+CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o: ../Lista.h
+CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o: ../Nodo.h
+CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o: ../Peliculas.cpp
+CMakeFiles/TrabajoPractico.dir/Peliculas.cpp.o: ../Peliculas.h
+
+CMakeFiles/TrabajoPractico.dir/archivo.cpp.o: ../Lista.h
+CMakeFiles/TrabajoPractico.dir/archivo.cpp.o: ../Nodo.h
+CMakeFiles/TrabajoPractico.dir/archivo.cpp.o: ../Peliculas.h
+CMakeFiles/TrabajoPractico.dir/archivo.cpp.o: ../archivo.cpp
+CMakeFiles/TrabajoPractico.dir/archivo.cpp.o: ../archivo.h
 

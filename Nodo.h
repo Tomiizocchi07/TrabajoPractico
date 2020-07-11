@@ -75,5 +75,3 @@ Nodo<Dato>* Nodo<Dato>::get_siguiente()
 {
     return psig;
 }
-
-

@@ -90,7 +90,16 @@
 		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/Menu.h">
 			<Option target="TrabajoPractico"/>
 		</Unit>
-		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/main.cpp">
+		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.cpp">
+			<Option target="TrabajoPractico"/>
+		</Unit>
+		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/Peliculas.h">
+			<Option target="TrabajoPractico"/>
+		</Unit>
+		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/archivo.cpp">
+			<Option target="TrabajoPractico"/>
+		</Unit>
+		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/archivo.h">
 			<Option target="TrabajoPractico"/>
 		</Unit>
 		<Unit filename="/home/tomas/Escritorio/TP/TrabajoPractico/CMakeLists.txt">
