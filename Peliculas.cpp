@@ -29,10 +29,10 @@ string Peliculas :: get_actor(int pos){
 }
 
 void Peliculas::mostrar_pelicula() {
-    cout<<nombre;
-    cout<<genero;
-    cout<<puntaje;
-    cout<<director;
+    cout<<nombre << endl;
+    cout<<genero << endl;
+    cout<<puntaje << endl;
+    cout<<director << endl;
     for (int i = 1; i <= (* actores).get_tam(); i++)
         cout << actores -> get_dato(i);
 }
