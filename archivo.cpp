@@ -32,8 +32,8 @@ void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
         {
             (*pAux).insert(actorPelicula);
         }
-        Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, pAux);
-        (*pLista).insert(pelicula);
+        //Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, pAux);
+        //(*pLista).insert(pelicula);
     }
 }
 

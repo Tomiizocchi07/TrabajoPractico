@@ -40,9 +40,9 @@ void Menu::mostrar_lista(int opcion) {
         case 3:
             lista_aux = recomendadas;
             break;
-        case 4:
-            break;
     }
-    for (unsigned int pos = 1; pos <= lista_aux->get_tam(); pos++)
+    if(opcion =! 4){
+        for (unsigned int pos = 1; pos <= lista_aux->get_tam(); pos++)
         lista_aux->get_dato(pos).mostrar_pelicula();
+    }
 }
