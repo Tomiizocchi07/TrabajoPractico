@@ -12,12 +12,14 @@ void Menu::mostrar_menu()
     int opcion;
     do
     {
+    cout << endl << "------------------------------------------------------------" << endl;
     cout<<"1. Mostrar peliculas vistas."<<endl;
     cout<<"2. Mostrar peliculas NO vistas."<<endl;
     cout<<"3. Mostrar peliculas recomendadas."<<endl;
     cout<<"4. Salir."<<endl;
     cout<< "\n\nElija la opcion que desea realizar: ";
     cin >> opcion;
+    cout << "------------------------------------------------------------";
     while ((0 >= opcion) || (opcion > 4))
     {
         cout<<"La opcion ingresada no es valida, vuelva a ingresar una opcion entre 1 y 4: ";
@@ -33,15 +35,18 @@ void Menu::mostrar_lista(int opcion) {
     switch (opcion) {
         case 1:
             lista_aux = vistas;
+            cout << endl << "Lista de Peliculas Vistas" << endl << endl;
             break;
         case 2:
             lista_aux = no_vistas;
+            cout << endl << "Lista de Peliculas No Vistas" << endl << endl;
             break;
         case 3:
             lista_aux = recomendadas;
+            cout << endl << "Lista de Peliculas Recomendadas" << endl << endl;
             break;
     }
-    if(opcion > 4){
+    if(opcion < 4){
         for (unsigned int pos = 1; pos <= lista_aux->get_tam(); pos++)
         lista_aux->get_dato(pos).mostrar_pelicula();
     }
