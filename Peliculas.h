@@ -37,10 +37,6 @@ public:
 	//POST: Devuelve el actor de la pelicula que este en la posicion pos de la lista.
 	string get_actor(int pos);
 
-	//Destructor de la clase.
-    //POST: Destruye la clase, liberando la memoria dinamica utilizada.
-	~Peliculas();
-
 	//POST: Devuelve los datos de la pelicula.
 	void mostrar_pelicula();
 };

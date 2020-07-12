@@ -35,6 +35,7 @@ void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
 	}*/
 	getline(archivo,mystr);
 	getline(archivo,mystr);
+	int marcador  = 1;
 	for ( unsigned int i = 0; i <= mystr.length(); i++){
             if (mystr[i] == '_'){
                 mystr[i] = ' ';
@@ -74,7 +75,7 @@ bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVist
 
 void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas)
 {
-    for (int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
+    for (unsigned int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
     {
         if ((*pListaNoVistas).get_dato(i).get_puntaje() >= 7)
         {
@@ -82,7 +83,7 @@ void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peli
         }
         else
         {
-            for (int j = 1; j <= (*pListaVistas).get_tam(); j++)
+            for (unsigned int j = 1; j <= (*pListaVistas).get_tam(); j++)
             {
                 if ((*pListaNoVistas).get_dato(i).get_director() == (*pListaVistas).get_dato(j).get_director())
                 {

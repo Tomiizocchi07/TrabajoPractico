@@ -36,7 +36,3 @@ void Peliculas::mostrar_pelicula() {
     for (unsigned int i = 1; i <= (* actores).get_tam(); i++)
         cout << actores -> get_dato(i);
 }
-
-Peliculas :: ~Peliculas(){
-    delete actores;
-}

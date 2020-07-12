@@ -41,7 +41,7 @@ void Menu::mostrar_lista(int opcion) {
             lista_aux = recomendadas;
             break;
     }
-    if(opcion =! 4){
+    if(opcion > 4){
         for (unsigned int pos = 1; pos <= lista_aux->get_tam(); pos++)
         lista_aux->get_dato(pos).mostrar_pelicula();
     }
