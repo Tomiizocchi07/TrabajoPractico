@@ -22,7 +22,7 @@ void Menu::mostrar_menu()
     cout << "------------------------------------------------------------";
     while ((0 >= opcion) || (opcion > 4))
     {
-        cout<<"La opcion ingresada no es valida, vuelva a ingresar una opcion entre 1 y 4: ";
+        cout << endl << "La opcion ingresada no es valida, vuelva a ingresar una opcion entre 1 y 4: ";
         cin>>opcion;
     }
         mostrar_lista(opcion);
