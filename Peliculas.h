@@ -33,9 +33,9 @@ public:
     //POST: Devuelve el director de la pelicula.
 	string get_director();
 
-	//PRE : La posicion pos debe estar entre cero y la cantidad de actores presentes en la pelicula -1.
-	//POST: Devuelve el actor de la pelicula que este en la posicion pos de la lista.
-	string get_actor(int pos);
+	//PRE :
+	//POST: Devuelve lista de actores.
+	Lista<string>* get_actor();
 
 	//POST: Devuelve los datos de la pelicula.
 	void mostrar_pelicula();
