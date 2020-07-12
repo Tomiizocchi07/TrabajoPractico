@@ -25,14 +25,21 @@ string Peliculas :: get_director(){
 }
 
 string Peliculas :: get_actor(int pos){
-	return this -> actores -> get_dato(pos);
+	return this -> actores;
 }
 
 void Peliculas::mostrar_pelicula() {
-    cout<<nombre << endl;
-    cout<<genero << endl;
-    cout<<puntaje << endl;
-    cout<<director << endl;
+    cout<< "Pelicula: " << nombre << " - Genero:  " << genero << " - Puntaje: " << puntaje << " - Director: " << director << " - Actores: ";
     for (unsigned int i = 1; i <= (* actores).get_tam(); i++)
-        cout << actores -> get_dato(i);
+    {
+        if (i == (*actores).get_tam())
+        {
+            cout << actores -> get_dato(i) << endl << endl;
+        }
+        else
+        {
+        cout << actores -> get_dato(i) << ", ";
+        }
+        
+    }
 }
