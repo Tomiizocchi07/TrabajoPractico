@@ -23,16 +23,16 @@ public:
     ~Archivo(){};
     //PRE: Variable archivo de lectura por parametro.
     //POST: Devuelve booleana depende de si se pudo abrir el archivo o no.
-    bool existeArchivo(ifstream& archivo);
+    bool existe_archivo(ifstream& archivo);
     //PRE: Dos strings y dos punteros a lista de peliculas, una por cada archivo.
     //POST: Devuelve booleana depende de si pudo leer los archivos o no.
-    bool leerArchivos(string nombreArchivoVistas, string nombreArchivoNoVistas, Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas);
+    bool leer_archivos(string nombre_archivo_vistas, string nombre_archivo_no_vistas, Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas);
     //PRE: Archivo de lectura y puntero a la lista de peliculas que se va a cargar.
     //POST: Lista cargada.
-    void cargarLista(ifstream& archivo, Lista<Peliculas>* pLista);
+    void cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista);
     //PRE: 3 punteros a lista de peliculas, por cada lista.
     //POST: Lista de Recomendadas cargada.
-    void cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas);
+    void cargar_lista_recomendadas(Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas, Lista<Peliculas>* p_lista_recomendadas);
     //PRE: Dos punteros a lista de strings (actores).
     //POST: Devuelve booleana depende de si coinciden en algun actor o no.
     bool coincide_actores(Lista<string>* lista_actores_no_vistas, Lista<string>* lista_actores_vistas);
