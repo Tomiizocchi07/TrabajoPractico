@@ -73,6 +73,22 @@ bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVist
     }
 }
 
+bool Archivo::coincide_actores(Lista<string>* lista_actores_no_vistas, Lista<string>* lista_actores_vistas)
+{
+    bool recomendada = false;
+    for (int i = 1; i <= (*lista_actores_no_vistas).get_tam(); i ++)
+    {
+        for (int j = 1; j <= (*lista_actores_vistas).get_tam(); j ++)
+        {
+            if ((*lista_actores_vistas).get_dato(i) == (*lista_actores_no_vistas).get_dato(j))
+            {
+                recomendada = true;
+            }
+        }
+    }
+    return recomendada;
+}
+
 void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas)
 {
     for (unsigned int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
@@ -89,6 +105,13 @@ void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peli
                 {
                     (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
                 }
+		else
+                {
+                    if(coincide_actores((*pListaNoVistas).get_dato(i).get_actor(), (*pListaVistas).get_dato(j).get_actor()))
+                    {
+                        (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
+                    }
+                }    
             }
         }
     }
