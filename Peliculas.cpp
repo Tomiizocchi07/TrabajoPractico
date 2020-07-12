@@ -24,7 +24,7 @@ string Peliculas :: get_director(){
 	return this -> director;
 }
 
-string Peliculas :: get_actor(int pos){
+Lista<string>* Peliculas :: get_actor(){
 	return this -> actores;
 }
 

@@ -17,9 +17,9 @@ int main()
     Lista<Peliculas> *l_recomendadas = &lista_recomendadas;
     
     Archivo archivos;
-    if(archivos.leerArchivos("peliculas_vistas.txt", "peliculas_no_vistas.txt", l_vistas, l_no_vistas))
+    if(archivos.leer_archivos("peliculas_vistas.txt", "peliculas_no_vistas.txt", l_vistas, l_no_vistas))
     {
-        archivos.cargarListaRecomendadas(l_vistas, l_no_vistas, l_recomendadas);
+        archivos.cargar_lista_recomendadas(l_vistas, l_no_vistas, l_recomendadas);
         Menu menu(l_vistas,l_no_vistas,l_recomendadas);
         menu.mostrar_menu();
     }

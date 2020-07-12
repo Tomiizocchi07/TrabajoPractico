@@ -38,7 +38,6 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
             }
             else if (my_str[i] == ' ' || (i == my_str.length() && my_str[i] != ' ')){
                 actor_pelicula = my_str.substr(marcador,i-marcador);
-                cout << actor_pelicula << endl;
                 (*p_aux).insert(actor_pelicula);
                 marcador = i+1;
             }
@@ -48,14 +47,14 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
     }
 }
 
-bool Archivo::leerArchivos(string nombre_archivo_vistas,string nombre_archivo_no_vistas, Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas)
+bool Archivo::leer_archivos(string nombre_archivo_vistas,string nombre_archivo_no_vistas, Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas)
 {
     ifstream archivo_no_vistas(nombre_archivo_no_vistas);
     ifstream archivo_vistas(nombre_archivo_vistas);
     
-    if (existeArchivo(archivo_no_vistas))
+    if (existe_archivo(archivo_no_vistas))
     {
-        cargarLista(archivo_no_vistas, p_lista_no_vistas);
+        cargar_lista(archivo_no_vistas, p_lista_no_vistas);
         if (existe_archivo(archivo_vistas))
         {
             cargar_lista(archivo_vistas, p_lista_vistas);
@@ -71,9 +70,9 @@ bool Archivo::leerArchivos(string nombre_archivo_vistas,string nombre_archivo_no
 bool Archivo::coincide_actores(Lista<string>* lista_actores_no_vistas, Lista<string>* lista_actores_vistas)
 {
     bool recomendada = false;
-    for (int i = 1; i <= (*lista_actores_no_vistas).get_tam(); i ++)
+    for (unsigned int i = 1; i <= (*lista_actores_no_vistas).get_tam(); i ++)
     {
-        for (int j = 1; j <= (*lista_actores_vistas).get_tam(); j ++)
+        for (unsigned int j = 1; j <= (*lista_actores_vistas).get_tam(); j ++)
         {
             if ((*lista_actores_vistas).get_dato(i) == (*lista_actores_no_vistas).get_dato(j))
             {
