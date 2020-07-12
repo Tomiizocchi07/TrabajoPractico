@@ -22,18 +22,32 @@ void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
     int puntajePelicula;
     string actorPelicula;
     Lista<string>* pAux;
+    string mystr;
     while(archivo >> nombrePelicula)
     {
         pAux = new Lista<string>;
         archivo >> generoPelicula;
         archivo >> puntajePelicula;
         archivo >> directorPelicula;
-        while ((archivo >> actorPelicula) && (archivo.get() != '\n'))
+        /*while ((archivo >> actorPelicula) && (archivo.get() != '\n'))
         {
             (*pAux).insert(actorPelicula);
-        }
-        //Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, pAux);
-        //(*pLista).insert(pelicula);
+	}*/
+	getline(archivo,mystr);
+	getline(archivo,mystr);
+	for ( unsigned int i = 0; i <= mystr.length(); i++){
+            if (mystr[i] == '_'){
+                mystr[i] = ' ';
+            }
+            else if (mystr[i] == ' ' || (i == mystr.length() && mystr[i] != ' ')){
+                actorPelicula = mystr.substr(marcador,i-marcador);
+                cout << actorPelicula << endl;
+                (*pAux).insert(actorPelicula);
+                marcador = i+1;
+            }
+            }
+        Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, pAux);
+        (*pLista).insert(pelicula);
     }
 }
 
@@ -60,7 +74,7 @@ bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVist
 
 void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas)
 {
-    for (unsigned int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
+    for (int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
     {
         if ((*pListaNoVistas).get_dato(i).get_puntaje() >= 7)
         {
@@ -68,7 +82,7 @@ void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peli
         }
         else
         {
-            for (unsigned int j = 1; j <= (*pListaVistas).get_tam(); j++)
+            for (int j = 1; j <= (*pListaVistas).get_tam(); j++)
             {
                 if ((*pListaNoVistas).get_dato(i).get_director() == (*pListaVistas).get_dato(j).get_director())
                 {
