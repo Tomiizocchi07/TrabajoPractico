@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool Archivo::existeArchivo(ifstream& archivo)
+bool Archivo::existe_archivo(ifstream& archivo)
 {
     if (!archivo.fail())
     {
@@ -16,59 +16,54 @@ bool Archivo::existeArchivo(ifstream& archivo)
         return false;
 }
 
-void Archivo::cargarLista(ifstream& archivo, Lista<Peliculas>* pLista)
+void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
 {
-    string nombrePelicula, generoPelicula, directorPelicula;
-    int puntajePelicula;
-    string actorPelicula;
-    Lista<string>* pAux;
-    string mystr;
-    while(archivo >> nombrePelicula)
+    string nombre_pelicula, genero_pelicula, director_pelicula;
+    int puntaje_pelicula;
+    string actor_pelicula;
+    Lista<string>* p_aux;
+    string my_str;
+    while(archivo >> nombre_pelicula)
     {
-        pAux = new Lista<string>;
-        archivo >> generoPelicula;
-        archivo >> puntajePelicula;
-        archivo >> directorPelicula;
-        /*while ((archivo >> actorPelicula) && (archivo.get() != '\n'))
-        {
-            (*pAux).insert(actorPelicula);
-	}*/
-	getline(archivo,mystr);
-	getline(archivo,mystr);
+        p_aux = new Lista<string>;
+        archivo >> genero_pelicula;
+        archivo >> puntaje_pelicula;
+        archivo >> director_pelicula;
+	getline(archivo,my_str);
+	getline(archivo,my_str);
 	int marcador  = 1;
-	for ( unsigned int i = 0; i <= mystr.length(); i++){
-            if (mystr[i] == '_'){
-                mystr[i] = ' ';
+	for ( unsigned int i = 0; i <= my_str.length(); i++){
+            if (my_str[i] == '_'){
+                my_str[i] = ' ';
             }
-            else if (mystr[i] == ' ' || (i == mystr.length() && mystr[i] != ' ')){
-                actorPelicula = mystr.substr(marcador,i-marcador);
-                cout << actorPelicula << endl;
-                (*pAux).insert(actorPelicula);
+            else if (my_str[i] == ' ' || (i == my_str.length() && my_str[i] != ' ')){
+                actor_pelicula = my_str.substr(marcador,i-marcador);
+                cout << actor_pelicula << endl;
+                (*p_aux).insert(actor_pelicula);
                 marcador = i+1;
             }
             }
-        Peliculas pelicula(nombrePelicula,generoPelicula,puntajePelicula,directorPelicula, pAux);
-        (*pLista).insert(pelicula);
+        Peliculas pelicula(nombre_pelicula,genero_pelicula,puntaje_pelicula,director_pelicula, p_aux);
+        (*p_lista).insert(pelicula);
     }
 }
 
-bool Archivo::leerArchivos(string nombreArchivoVistas,string nombreArchivoNoVistas, Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas)
+bool Archivo::leerArchivos(string nombre_archivo_vistas,string nombre_archivo_no_vistas, Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas)
 {
-    ifstream archivoNoVistas(nombreArchivoNoVistas);
-    ifstream archivoVistas(nombreArchivoVistas);
+    ifstream archivo_no_vistas(nombre_archivo_no_vistas);
+    ifstream archivo_vistas(nombre_archivo_vistas);
     
-    if (existeArchivo(archivoNoVistas))
+    if (existeArchivo(archivo_no_vistas))
     {
-        cargarLista(archivoNoVistas, pListaNoVistas);
-        if (existeArchivo(archivoVistas))
+        cargarLista(archivo_no_vistas, p_lista_no_vistas);
+        if (existe_archivo(archivo_vistas))
         {
-            cargarLista(archivoVistas, pListaVistas);
+            cargar_lista(archivo_vistas, p_lista_vistas);
         }
         return true;
     }
     else
     {
-        cout << "[-] El archivo de peliculas NO vistas no se pudo abrir correctamente. Por favor verifique que el archivo exista." << endl;
         return false;
     }
 }
@@ -89,27 +84,27 @@ bool Archivo::coincide_actores(Lista<string>* lista_actores_no_vistas, Lista<str
     return recomendada;
 }
 
-void Archivo::cargarListaRecomendadas(Lista<Peliculas>* pListaVistas, Lista<Peliculas>* pListaNoVistas, Lista<Peliculas>* pListaRecomendadas)
+void Archivo::cargar_lista_recomendadas(Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas, Lista<Peliculas>* p_lista_recomendadas)
 {
-    for (unsigned int i = 1; i <= (*pListaNoVistas).get_tam(); i++)
+    for (unsigned int i = 1; i <= (*p_lista_no_vistas).get_tam(); i++)
     {
-        if ((*pListaNoVistas).get_dato(i).get_puntaje() >= 7)
+        if ((*p_lista_no_vistas).get_dato(i).get_puntaje() >= 7)
         {
-            (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
+            (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
         }
         else
         {
-            for (unsigned int j = 1; j <= (*pListaVistas).get_tam(); j++)
+            for (unsigned int j = 1; j <= (*p_lista_vistas).get_tam(); j++)
             {
-                if ((*pListaNoVistas).get_dato(i).get_director() == (*pListaVistas).get_dato(j).get_director())
+                if ((*p_lista_no_vistas).get_dato(i).get_director() == (*p_lista_vistas).get_dato(j).get_director())
                 {
-                    (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
+                    (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
                 }
 		else
                 {
-                    if(coincide_actores((*pListaNoVistas).get_dato(i).get_actor(), (*pListaVistas).get_dato(j).get_actor()))
+                    if(coincide_actores((*p_lista_no_vistas).get_dato(i).get_actor(), (*p_lista_vistas).get_dato(j).get_actor()))
                     {
-                        (*pListaRecomendadas).insert((*pListaNoVistas).get_dato(i));
+                        (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
                     }
                 }    
             }
