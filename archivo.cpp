@@ -30,10 +30,11 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
     string nombre_pelicula, genero_pelicula, director_pelicula;
     int puntaje_pelicula;
     string actor_pelicula;
-    Lista<string>* p_aux;
+
     string my_str;
     while(archivo >> nombre_pelicula)
     {
+        Lista<string> * p_aux;
         p_aux = new Lista<string>;
         archivo >> genero_pelicula;
         archivo >> puntaje_pelicula;
@@ -54,9 +55,12 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
                 (*p_aux).insert(actor_pelicula);
                 marcador = i+1;
             }
+
         }
         Peliculas pelicula(nombre_pelicula,genero_pelicula,puntaje_pelicula,director_pelicula, p_aux);
         (*p_lista).insert(pelicula);
+        p_aux = 0;
+        delete p_aux;
     }
 }
 
@@ -103,6 +107,7 @@ void Archivo::cargar_lista_recomendadas(Lista<Peliculas>* p_lista_vistas, Lista<
         if ((*p_lista_no_vistas).get_dato(i).get_puntaje() >= 7)
         {
             (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
+            p_lista_no_vistas->get_dato(i).incremento_borro();
         }
         else
         {
@@ -111,12 +116,14 @@ void Archivo::cargar_lista_recomendadas(Lista<Peliculas>* p_lista_vistas, Lista<
                 if ((*p_lista_no_vistas).get_dato(i).get_director() == (*p_lista_vistas).get_dato(j).get_director())
                 {
                     (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
+                    p_lista_no_vistas->get_dato(i).incremento_borro();
                 }
-		else
+                else
                 {
                     if(coincide_actores((*p_lista_no_vistas).get_dato(i).get_actor(), (*p_lista_vistas).get_dato(j).get_actor()))
                     {
                         (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
+                        p_lista_no_vistas->get_dato(i).incremento_borro();
                     }
                 }
             }

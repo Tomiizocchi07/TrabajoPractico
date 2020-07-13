@@ -8,19 +8,20 @@ const string mensaje = "[-] El archivo de peliculas NO vistas no se pudo abrir c
 
 int main()
 {
+
     Lista<Peliculas> lista_vistas;
     Lista<Peliculas> lista_no_vistas;
     Lista<Peliculas> lista_recomendadas;
-    
+/*
     Lista<Peliculas> *l_vistas = &lista_vistas;
     Lista<Peliculas> *l_no_vistas = &lista_no_vistas;
     Lista<Peliculas> *l_recomendadas = &lista_recomendadas;
-    
+*/
     Archivo archivos;
-    if(archivos.leer_archivos("peliculas_vistas.txt", "peliculas_no_vistas.txt", l_vistas, l_no_vistas))
+    if(archivos.leer_archivos("peliculas_vistas.txt", "peliculas_no_vistas.txt", &lista_vistas, &lista_no_vistas))
     {
-        archivos.cargar_lista_recomendadas(l_vistas, l_no_vistas, l_recomendadas);
-        Menu menu(l_vistas,l_no_vistas,l_recomendadas);
+        archivos.cargar_lista_recomendadas(&lista_vistas,&lista_no_vistas,&lista_recomendadas);
+        Menu menu(&lista_vistas,&lista_no_vistas,&lista_recomendadas);
         menu.mostrar_menu();
     }
     else

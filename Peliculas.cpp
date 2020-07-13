@@ -6,6 +6,27 @@ Peliculas :: Peliculas(string nombre, string genero, int puntaje, string directo
 	this -> puntaje = puntaje;
 	this -> director = director;
 	this -> actores = actores;
+	this-> borro = 1;
+}
+
+Peliculas::~Peliculas(){
+
+}
+
+void Peliculas :: incremento_borro(){
+    this->borro++;
+}
+
+void Peliculas :: decremento_borro(){
+    this->borro--;
+}
+
+int Peliculas :: borro_valor(){
+    return borro;
+}
+
+void Peliculas :: borro_manual(){
+    delete actores;
 }
 
 string Peliculas :: get_nombre(){
@@ -38,8 +59,8 @@ void Peliculas::mostrar_pelicula() {
         }
         else
         {
-        cout << actores -> get_dato(i) << ", ";
+            cout << actores -> get_dato(i) << ", ";
         }
-        
+
     }
 }
