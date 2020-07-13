@@ -16,6 +16,15 @@ bool Archivo::existe_archivo(ifstream& archivo)
         return false;
 }
 
+string Archivo :: limpiar_string(string mystr){
+    for(unsigned int i = 0; i < mystr.length() ; i++){
+        if (mystr[i] == '_'){
+            mystr[i] = ' ';
+        }
+    }
+    return mystr;
+}
+
 void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
 {
     string nombre_pelicula, genero_pelicula, director_pelicula;
@@ -29,10 +38,14 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
         archivo >> genero_pelicula;
         archivo >> puntaje_pelicula;
         archivo >> director_pelicula;
-	getline(archivo,my_str);
-	getline(archivo,my_str);
-	int marcador  = 1;
-	for ( unsigned int i = 0; i <= my_str.length(); i++){
+        nombre_pelicula = limpiar_string(nombre_pelicula);
+        genero_pelicula = limpiar_string(genero_pelicula);
+        director_pelicula = limpiar_string(director_pelicula);
+
+        getline(archivo,my_str);
+        getline(archivo,my_str);
+        int marcador  =  0;
+        for ( unsigned int i = 0; i <= my_str.length(); i++){
             if (my_str[i] == '_'){
                 my_str[i] = ' ';
             }
@@ -41,7 +54,7 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
                 (*p_aux).insert(actor_pelicula);
                 marcador = i+1;
             }
-            }
+        }
         Peliculas pelicula(nombre_pelicula,genero_pelicula,puntaje_pelicula,director_pelicula, p_aux);
         (*p_lista).insert(pelicula);
     }
@@ -51,7 +64,7 @@ bool Archivo::leer_archivos(string nombre_archivo_vistas,string nombre_archivo_n
 {
     ifstream archivo_no_vistas(nombre_archivo_no_vistas);
     ifstream archivo_vistas(nombre_archivo_vistas);
-    
+
     if (existe_archivo(archivo_no_vistas))
     {
         cargar_lista(archivo_no_vistas, p_lista_no_vistas);
@@ -105,7 +118,7 @@ void Archivo::cargar_lista_recomendadas(Lista<Peliculas>* p_lista_vistas, Lista<
                     {
                         (*p_lista_recomendadas).insert((*p_lista_no_vistas).get_dato(i));
                     }
-                }    
+                }
             }
         }
     }

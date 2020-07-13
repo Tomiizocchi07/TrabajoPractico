@@ -24,6 +24,11 @@ public:
     //PRE: Variable archivo de lectura por parametro.
     //POST: Devuelve booleana depende de si se pudo abrir el archivo o no.
     bool existe_archivo(ifstream& archivo);
+
+    //PRE: Recibe un string
+    //POST: Devuelve el string sin guion bajo
+    string limpiar_string(string mystr);
+
     //PRE: Dos strings y dos punteros a lista de peliculas, una por cada archivo.
     //POST: Devuelve booleana depende de si pudo leer los archivos o no.
     bool leer_archivos(string nombre_archivo_vistas, string nombre_archivo_no_vistas, Lista<Peliculas>* p_lista_vistas, Lista<Peliculas>* p_lista_no_vistas);
