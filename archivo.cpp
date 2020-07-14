@@ -28,6 +28,7 @@ string Archivo :: limpiar_string(string mystr){
 void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
 {
     string nombre_pelicula, genero_pelicula, director_pelicula;
+    string puntaje;
     int puntaje_pelicula;
     string actor_pelicula;
 
@@ -39,6 +40,9 @@ void Archivo::cargar_lista(ifstream& archivo, Lista<Peliculas>* p_lista)
         archivo >> genero_pelicula;
         archivo >> puntaje_pelicula;
         archivo >> director_pelicula;
+        
+        puntaje_pelicula = stoi(puntaje);
+        
         nombre_pelicula = limpiar_string(nombre_pelicula);
         genero_pelicula = limpiar_string(genero_pelicula);
         director_pelicula = limpiar_string(director_pelicula);
@@ -68,20 +72,20 @@ bool Archivo::leer_archivos(string nombre_archivo_vistas,string nombre_archivo_n
 {
     ifstream archivo_no_vistas(nombre_archivo_no_vistas);
     ifstream archivo_vistas(nombre_archivo_vistas);
-
-    if (existe_archivo(archivo_no_vistas))
-    {
-        cargar_lista(archivo_no_vistas, p_lista_no_vistas);
-        if (existe_archivo(archivo_vistas))
+    
+    if (existe_archivo(archivo_vistas))
         {
             cargar_lista(archivo_vistas, p_lista_vistas);
         }
-        return true;
+    try{
+        cargar_lista(archivo_no_vistas, p_lista_no_vistas)        
     }
-    else
-    {
-        return false;
+        
+    catch(const std::exception&){
+        cout << "El archivo de Peliculas no existe" << endl;
     }
+        
+    return true;
 }
 
 bool Archivo::coincide_actores(Lista<string>* lista_actores_no_vistas, Lista<string>* lista_actores_vistas)
