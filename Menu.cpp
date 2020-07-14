@@ -9,31 +9,12 @@ Menu::Menu(Lista<Peliculas> *l_vistas, Lista<Peliculas> *l_no_vistas, Lista<Peli
 
 void Menu :: borro_todo(){
 
-    for (int i = 1; i <= vistas->get_tam(); i++){
-        if (vistas->get_dato(i).borro_valor() > 1){
-            vistas->get_dato(i).decremento_borro();
-        }
-        else{
-            vistas->get_dato(i).borro_manual();
-        }
+    for (unsigned int i = 1; i <= vistas->get_tam(); i++){
+        vistas->get_dato(i).borrar_manual();
     }
     for (unsigned int i = 1; i <= no_vistas->get_tam(); i++){
-        if (no_vistas->get_dato(i).borro_valor() > 1){
-            no_vistas->get_dato(i).decremento_borro();
-        }
-        else{
-            no_vistas->get_dato(i).borro_manual();
-        }
+        no_vistas->get_dato(i).borrar_manual();
     }
-    for (unsigned int i = 1; i <= recomendadas->get_tam(); i++){
-        if (recomendadas->get_dato(i).borro_valor() > 1){
-            recomendadas->get_dato(i).decremento_borro();
-        }
-        else{
-            recomendadas->get_dato(i).borro_manual();
-        }
-    }
-
 }
 
 void Menu::mostrar_menu()

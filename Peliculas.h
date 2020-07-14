@@ -14,8 +14,9 @@ private:
 	int puntaje;
 	string director;
 	Lista<string>* actores;
-	int borro = 0;
+    int cantidadCopias;
 public:
+
 	//Constructor de la clase.
     //POST: Construye la clase con los datos proporcionados.
 	Peliculas(string nombre, string genero, int puntaje, string director, Lista<string> *actores);
@@ -26,19 +27,19 @@ public:
 
 	//PRE: objeto creado
 	//POST: Incrementa la variable borro
-	void incremento_borro();
+	void incremento_copias();
 
 	//PRE:Objeto creado
 	//POST: Decremento la variable borro en 1
-	void decremento_borro();
+	void decremento_copias();
 
 	//PRE: Objeto creado
 	//POST: Devuelve el valor de borro
-	int borro_valor();
+	int copias_valor();
 
 	//PRE:Objeto creado
 	//POST: Borro la lista de actores;
-	void borro_manual();
+	void borrar_manual();
 
 
     //POST: Devuelve el nombre de la pelicula.

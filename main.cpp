@@ -12,11 +12,7 @@ int main()
     Lista<Peliculas> lista_vistas;
     Lista<Peliculas> lista_no_vistas;
     Lista<Peliculas> lista_recomendadas;
-/*
-    Lista<Peliculas> *l_vistas = &lista_vistas;
-    Lista<Peliculas> *l_no_vistas = &lista_no_vistas;
-    Lista<Peliculas> *l_recomendadas = &lista_recomendadas;
-*/
+
     Archivo archivos;
     if(archivos.leer_archivos("peliculas_vistas.txt", "peliculas_no_vistas.txt", &lista_vistas, &lista_no_vistas))
     {

@@ -6,26 +6,26 @@ Peliculas :: Peliculas(string nombre, string genero, int puntaje, string directo
 	this -> puntaje = puntaje;
 	this -> director = director;
 	this -> actores = actores;
-	this-> borro = 1;
+	this-> cantidadCopias = 1;
 }
 
 Peliculas::~Peliculas(){
 
 }
 
-void Peliculas :: incremento_borro(){
-    this->borro++;
+void Peliculas::incremento_copias(){
+    cantidadCopias++;
 }
 
-void Peliculas :: decremento_borro(){
-    this->borro--;
+void Peliculas :: decremento_copias(){
+    cantidadCopias--;
 }
 
-int Peliculas :: borro_valor(){
-    return borro;
+int Peliculas :: copias_valor(){
+    return cantidadCopias;
 }
 
-void Peliculas :: borro_manual(){
+void Peliculas :: borrar_manual(){
     delete actores;
 }
 
